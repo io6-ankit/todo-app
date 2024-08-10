@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import uuid from "uuid";
-
+import Todo from "./Todo";
+import NewTodoForm from "./NewTodoForm";
+// import uuid from "uuid";
 import "./TodoList.css";
 const TodoList = () => {
   const [todos, setTodos] = useState([
-    { id: uuid(), task: "task 1", completed: false },
-    { id: uuid(), task: "task 2", completed: true },
+    { id: 1, task: "create todo app", completed: false },
+    { id: 2, task: "create a git repo name Todo", completed: true },
   ]);
-
+  // create Todo function
   const create = (newTodo) => {
     console.log(newTodo);
     setTodos([...todos, newTodo]);
   };
-
+  // remove Todo function
   const remove = (id) => {
+    console.log("id", id);
     setTodos(todos.filter((todo) => todo.id !== id));
   };
-
+  // update Todo function
   const update = (id, updtedTask) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
@@ -27,7 +29,7 @@ const TodoList = () => {
     });
     setTodos(updatedTodos);
   };
-
+  // toggleComplete Todo function
   const toggleComplete = (id) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
