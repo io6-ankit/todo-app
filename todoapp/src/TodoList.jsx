@@ -57,8 +57,8 @@ const TodoList = () => {
           Todo List
           <span>A simple React Todo List App</span>
         </h1>
-        <ul>{todosList}</ul>
         <NewTodoForm createTodo={create} />
+        <ul>{todosList}</ul>
       </div>
     </>
   );

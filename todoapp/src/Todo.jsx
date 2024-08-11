@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./Todo.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 function Todo({ todo, remove, update, toggleComplete }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -46,8 +48,13 @@ function Todo({ todo, remove, update, toggleComplete }) {
           {todo.task}
         </li>
         <div className="Todo-buttons">
-          <button onClick={toggleFrom}>edit</button>
-          <button onClick={() => handleClick(todo?.id)}>delete</button>
+          <button onClick={toggleFrom}>
+            <EditIcon />{" "}
+          </button>
+          <button onClick={() => handleClick(todo?.id)}>
+            {" "}
+            <DeleteIcon />
+          </button>
         </div>
       </div>
     );
