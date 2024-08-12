@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from "react";
 import ReactDOM from "react-dom";
 import uuid from "uuid";
+
 import "./newTodoForm.css";
 
 function NewTodoForm({ task, createTodo }) {
@@ -17,7 +18,11 @@ function NewTodoForm({ task, createTodo }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const newTodo = { id: 3, task: userInput.task, completed: false };
+    const newTodo = {
+      id: Math.random(),
+      task: userInput.task,
+      completed: false,
+    };
     createTodo(newTodo);
     setUserInput({ task: "" });
   };

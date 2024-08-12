@@ -52,11 +52,7 @@ const TodoList = () => {
   return (
     <>
       <div className="TodoList">
-        <h1>
-          {" "}
-          Todo List
-          <span>A simple React Todo List App</span>
-        </h1>
+        <h1> Todo List</h1>
         <NewTodoForm createTodo={create} />
         <ul>{todosList}</ul>
       </div>

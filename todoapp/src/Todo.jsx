@@ -11,6 +11,7 @@ function Todo({ todo, remove, update, toggleComplete }) {
   const handleClick = (id) => {
     // remove(evt.target.id);
     remove(id);
+    console.log("id", id);
   };
   const toggleFrom = () => {
     setIsEditing(!isEditing);
@@ -49,7 +50,7 @@ function Todo({ todo, remove, update, toggleComplete }) {
         </li>
         <div className="Todo-buttons">
           <button onClick={toggleFrom}>
-            <EditIcon />{" "}
+            <EditIcon />
           </button>
           <button onClick={() => handleClick(todo?.id)}>
             {" "}
